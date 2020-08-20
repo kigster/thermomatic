@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/spin-org/thermomatic/internal/common"
+	"fmt"
 )
 
 func main() {
-	panic(common.ErrNotImplemented)
+	fmt.Print("Hello!")
 }

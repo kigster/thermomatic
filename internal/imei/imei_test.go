@@ -3,7 +3,7 @@ package imei
 import (
 	"testing"
 
-	"github.com/spin-org/thermomatic/internal/common"
+	"github.com/kigster/thermomatic/internal/common"
 )
 
 func TestDecode(t *testing.T) {

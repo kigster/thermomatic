@@ -1,0 +1,6 @@
+# This file is only used by VSCode Plugin 
+# bazel-stack-vscode
+
+run :thermomatic
+
+test //...:all
