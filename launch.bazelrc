@@ -4,3 +4,7 @@
 run :thermomatic
 
 test //...:all
+
+run //:buildifier-lint-warn
+
+run //:buildifier-lint-fix
