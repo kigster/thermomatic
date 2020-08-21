@@ -43,7 +43,7 @@ func clientWriter(conn net.Conn, ch <-chan string) {
 }
 
 func boot() {
-	listener, err := net.Listen("tcp", "0.0.0.0:8000")
+	listener, err := net.Listen("tcp", "0.0.0.0:1337")
 	if err != nil {
 		log.Fatal(err)
 	}

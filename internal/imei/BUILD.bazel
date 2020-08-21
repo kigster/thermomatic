@@ -10,6 +10,7 @@ go_library(
 
 go_test(
     name = "test",
+    size = "small",
     srcs = ["imei_test.go"],
     embed = [":library"],
     deps = ["//internal/common:library"],

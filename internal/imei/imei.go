@@ -4,7 +4,7 @@ package imei
 // NOTE: for more information about IMEI codes and their structure you may
 // consult with:
 //
-// https://en.wikipedia.org/wiki/Internation	al_Mobile_Equipment_Identity.
+// https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity.
 
 import (
 	"errors"
