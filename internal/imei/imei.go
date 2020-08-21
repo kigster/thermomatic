@@ -9,7 +9,7 @@ package imei
 import (
 	"errors"
 
-	"github.com/spin-org/thermomatic/internal/common"
+	"github.com/kigster/thermomatic/internal/common"
 )
 
 var (

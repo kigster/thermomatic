@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "library",
+    srcs = ["luhn.go"],
+    importpath = "github.com/kigster/thermomatic/internal/common/luhn",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "test",
+    size = "small",
+    srcs = ["luhn_test.go"],
+    embed = [":library"],
+)

@@ -1,0 +1,17 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "library",
+    srcs = ["imei.go"],
+    importpath = "github.com/kigster/thermomatic/internal/imei",
+    visibility = ["//:__subpackages__"],
+    deps = ["//internal/common:library"],
+)
+
+go_test(
+    name = "test",
+    size = "small",
+    srcs = ["imei_test.go"],
+    embed = [":library"],
+    deps = ["//internal/common:library"],
+)

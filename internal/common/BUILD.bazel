@@ -1,0 +1,9 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "library",
+    srcs = ["common.go"],
+    deps = ["//internal/common/luhn:library"],
+    importpath = "github.com/kigster/thermomatic/internal/common",
+    visibility = ["//:__subpackages__"],
+)
