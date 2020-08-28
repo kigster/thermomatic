@@ -30,7 +30,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: /home/runner/.cache
-          key: bazel-build-v1
+          key: bazel-v2
 
       - name: Install Bazelisk via bin/setup
         run: |
