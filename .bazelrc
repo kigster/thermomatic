@@ -18,7 +18,7 @@ build --show_timestamps
 # These inherit from Build 
 test --verbose_failures
 test --test_verbose_timeout_warnings
-test --verbose_explanations
+#test --verbose_explanations
 
 # These also inherit from build
 query --keep_going
