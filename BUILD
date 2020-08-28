@@ -30,13 +30,3 @@ go_binary(
     visibility = ["//visibility:public"],
 )
 
-go_test(
-    name = "go_default_test",
-    srcs = ["thermomatic_suite_test.go"],
-    embed = [":go_default_library"],
-    deps = [
-        "//internal/imei:library",
-        "@com_github_onsi_ginkgo//:go_default_library",
-        "@com_github_onsi_gomega//:go_default_library",
-    ],
-)

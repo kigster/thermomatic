@@ -1,12 +1,10 @@
 package imei
 
 import (
-	"fmt"
 	"testing"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/stretchr/testify/assert"
 )
 
 type ImeiExpectation struct {
@@ -45,13 +43,13 @@ var imeiInvalid2 = ImeiExpectation{
 }
 
 var imeis = []ImeiExpectation{
-	imeiValid1,
 	imeiValid2,
+	imeiValid1,
 	imeiInvalid1,
 	imeiInvalid2,
 }
 
-func TestThermomatic(t *testing.T) {
+func TestDecode(t *testing.T) {
 	RegisterFailHandler(Fail)
 	RunSpecs(t, "IMEI")
 }
@@ -91,33 +89,14 @@ func validateIMEI(i ImeiExpectation) {
 
 	Describe("Decode()", func() {
 		Context("With a valid IMEI", func() {
-			It("correctly decode", func() {
+			It("correctly decodes", func() {
 				Expect(code).To(Equal(i.decoded))
 			})
-			It("has a nil error", func() {
+			It("returns nil for error", func() {
 				Expect(err).To(BeNil())
 			})
 		})
 	})
-}
-
-func TestDecode(t *testing.T) {
-	for _, i := range imeis {
-		if code, err := Decode([]byte(i.imei)); err != nil {
-			t.Run(`invalid-error `, func(t *testing.T) {
-				assert.Equal(t, err, i.decodeError)
-			})
-
-			t.Run("IMEI is invalid", func(t *testing.T) {
-				assert.Equal(t, i.valid, false)
-			})
-		} else {
-			t.Run("code is invalid", func(t *testing.T) {
-				fmt.Printf("%d", i.decoded)
-				assert.Equal(t, code-i.decoded, uint64(0))
-			})
-		}
-	}
 }
 
 func TestDecodeAllocations(t *testing.T) {

@@ -14,18 +14,7 @@ http_archive(
 load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 
 bazel_skylib_workspace()
-# a shorter alternative to the above might be
-#http_archive(
-#    name = "com_github_bazelbuild_buildtools",
-#    strip_prefix = "buildtools-master",
-#    url = "https://github.com/bazelbuild/buildtools/archive/master.zip",
-#)
-# but going against master is failing now, this should have a commit hash and yet does not in official docs.
-# todo: consider working out what a working version is, so we can use this instead of loading all of skylib above
 
-## Buildifer/Go specific
-# buildifier is written in Go and hence needs rules_go to be built.
-# See https://github.com/bazelbuild/rules_go for the up to date setup instructions.
 http_archive(
     name = "io_bazel_rules_go",
     sha256 = "8663604808d2738dc615a2c3eb70eba54a9a982089dd09f6ffe5d0e75771bc4f",
@@ -50,7 +39,7 @@ http_archive(
     ],
 )
 
-load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
+load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies", "go_repository")
 
 gazelle_dependencies()
 
@@ -84,6 +73,63 @@ rules_proto_dependencies()
 rules_proto_toolchains()
 
 # Golang/Buildifier Lab End
+
+# github.com/onsi/ginkgo
+go_repository(
+    name = "com_github_onsi_ginkgo",
+    importpath = "github.com/onsi/ginkgo",
+    remote = "https://github.com/onsi/ginkgo",
+    tag = "v1.14.0",
+    vcs = "git"
+)
+
+# github.com/onsi/ginkgo
+go_repository(
+    name = "com_github_onsi_gomega",
+    remote = "https://github.com/onsi/gomega",
+    importpath = "github.com/onsi/gomega",
+    tag = "v1.10.1",
+    vcs = "git"
+)
+
+go_repository(
+    name = "com_github_nxadm_tail",
+    build_file_generation = "on",
+    build_file_proto_mode = "disable",
+    importpath = "github.com/nxadm/tail",
+    sum = "h1:DQuhQpB1tVlglWS2hLQ5OV6B5r8aGxSrPc5Qo6uTN78=",
+    version = "v1.4.4",
+)
+
+go_repository(
+    name = "org_golang_x_text",
+    build_file_generation = "on",
+    build_file_proto_mode = "disable",
+    importpath = "golang.org/x/text",
+    sum = "h1:cokOdA+Jmi5PJGXLlLllQSgYigAEfHXJAERHVMaCc2k=",
+    version = "v0.3.3",
+)
+
+go_repository(
+    name = "in_gopkg_tomb_v1",
+    build_file_generation = "on",
+    build_file_proto_mode = "disable",
+    importpath = "gopkg.in/tomb.v1",
+    sum = "h1:uRGJdciOHaEIrze2W8Q3AKkepLTh2hOroT7a+7czfdQ=",
+    version = "v1.0.0-20141024135613-dd632973f1e7",
+)
+
+go_repository(
+   name = "org_golang_x_net",
+   commit = "5ccada7d0a7ba9aeb5d3aca8d3501b4c2a509fec",
+   importpath = "golang.org/x/net",
+)
+
+go_repository(
+    name = "in_gopkg_yaml_v2",
+    commit = "eb3733d160e74a9c7e442f435eb3bea458e1d19f",
+    importpath = "gopkg.in/yaml.v2",
+)
 
 #Install proto dependencies
 http_archive(
