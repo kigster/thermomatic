@@ -148,6 +148,3 @@ If you feel like spending a bit more time on this challenge, you may also extend
 * You may devise your own strategy against resource exhaustion attacks.
 * You may devise your own strategy for what should happen when a device attempts to login twice.
 
-
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkigster%2Fthermomatic.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkigster%2Fthermomatic?ref=badge_large)
