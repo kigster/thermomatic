@@ -1,4 +1,3 @@
-/.envrc
 # Bazel
 
 # Ignore output directory symlinks
