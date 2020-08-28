@@ -6,7 +6,8 @@
 :toclevels: 5
 :sectnums:
 
-image::https://github.com/kigster/thermomatic/workflows/Bazel%20Lint,%20Build%20and%20Test/badge.svg[Bazel Lint, Build and Test]
+image:https://github.com/kigster/thermomatic/workflows/Bazel%20Lint,%20Build%20and%20Test/badge.svg?type=svg[Bazel Lint, Build and Test]
+image:https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkigster%2Fthermomatic.svg?type=shield[Licensing,link=https://app.fossa.com/projects/git%2Bgithub.com%2Fkigster%2Fthermomatic?ref=badge_shield]
 
 == Solution Discussion
 
