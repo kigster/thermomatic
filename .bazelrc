@@ -8,17 +8,17 @@
 startup --host_jvm_args=-Xmx500m
 
 # Build Options
-build --verbose_failures 
-build --jobs 30 
+build --verbose_failures
+build --jobs 30
 build --progress_report_interval=2
 build --color yes
 build --incompatible_strict_action_env
 build --show_timestamps
 
 # These inherit from Build 
-test --verbose_failures 
-test --test_verbose_timeout_warnings 
-# test --verbose_explanations
+test --verbose_failures
+test --test_verbose_timeout_warnings
+test --verbose_explanations
 
 # These also inherit from build
 query --keep_going

@@ -33,12 +33,12 @@ func handleConn(conn net.Conn) {
 
 	leaving <- ch
 	messages <- who + " has left"
-	conn.Close()
+	_ = conn.Close()
 }
 
 func clientWriter(conn net.Conn, ch <-chan string) {
 	for msg := range ch {
-		fmt.Fprintln(conn, msg) // NOTE: ignoring network errors
+		_, _ = fmt.Fprintln(conn, msg) // NOTE: ignoring network errors
 	}
 }
 

@@ -5,7 +5,6 @@ go_library(
     srcs = ["imei.go"],
     importpath = "github.com/kigster/thermomatic/internal/imei",
     visibility = ["//:__subpackages__"],
-    deps = ["//internal/common:library"],
 )
 
 go_test(
@@ -13,5 +12,10 @@ go_test(
     size = "small",
     srcs = ["imei_test.go"],
     embed = [":library"],
-    deps = ["//internal/common:library"],
+    deps = [
+        "//internal/common:library",
+        "@com_github_onsi_ginkgo//",
+        "@com_github_onsi_gomega//",
+        "@com_github_stretchr_testify//assert",
+    ],
 )
