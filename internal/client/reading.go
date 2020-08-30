@@ -1,6 +1,9 @@
 package client
 
-import "github.com/kigster/thermomatic/internal/common"
+import (
+	"github.com/kigster/thermomatic/internal/common"
+	"log"
+)
 
 // Reading is the set of device readings.
 type Reading struct {
@@ -27,5 +30,6 @@ type Reading struct {
 // Decode does NOT allocate under any condition. Additionally, it panics if b
 // isn't at least 40 bytes long.
 func (r *Reading) Decode(b []byte) (ok bool) {
+	log.Printf("decoding reading %v", b)
 	panic(common.ErrNotImplemented)
 }

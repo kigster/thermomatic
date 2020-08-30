@@ -5,4 +5,8 @@ go_library(
     srcs = ["common.go"],
     importpath = "github.com/kigster/thermomatic/internal/common",
     visibility = ["//:__subpackages__"],
+    deps = [
+        "//internal/common/imei:library",
+        "//internal/common/luhn:library",
+    ],
 )

@@ -1,14 +1,14 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 load("@bazel_gazelle//:def.bzl", "gazelle")
 load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
 
 buildifier(
-    name = "buildifier-lint-fix",
+    name = "buildifier-fix",
     lint_mode = "fix",
 )
 
 buildifier(
-    name = "buildifier-lint-warn",
+    name = "buildifier-check",
     lint_mode = "warn",
 )
 
@@ -29,4 +29,3 @@ go_binary(
     embed = [":library"],
     visibility = ["//visibility:public"],
 )
-

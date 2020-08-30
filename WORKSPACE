@@ -80,16 +80,16 @@ go_repository(
     importpath = "github.com/onsi/ginkgo",
     remote = "https://github.com/onsi/ginkgo",
     tag = "v1.14.0",
-    vcs = "git"
+    vcs = "git",
 )
 
 # github.com/onsi/ginkgo
 go_repository(
     name = "com_github_onsi_gomega",
-    remote = "https://github.com/onsi/gomega",
     importpath = "github.com/onsi/gomega",
+    remote = "https://github.com/onsi/gomega",
     tag = "v1.10.1",
-    vcs = "git"
+    vcs = "git",
 )
 
 go_repository(
@@ -120,9 +120,9 @@ go_repository(
 )
 
 go_repository(
-   name = "org_golang_x_net",
-   commit = "5ccada7d0a7ba9aeb5d3aca8d3501b4c2a509fec",
-   importpath = "golang.org/x/net",
+    name = "org_golang_x_net",
+    commit = "5ccada7d0a7ba9aeb5d3aca8d3501b4c2a509fec",
+    importpath = "golang.org/x/net",
 )
 
 go_repository(

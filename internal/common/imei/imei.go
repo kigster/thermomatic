@@ -1,4 +1,4 @@
-// Package imei implements an IMEI decoder.
+// Package IMEI implements an IMEI decoder and Luhn checksum check
 package imei
 
 // NOTE: for more information about IMEI codes and their structure you may
@@ -9,12 +9,17 @@ import (
 	"errors"
 	"strconv"
 	"unsafe"
+
+	"github.com/kigster/thermomatic/internal/common/luhn"
 )
 
 //goland:noinspection ALL
 var (
-	ErrInvalid           = errors.New("imei: invalid")
-	ErrChecksum          = errors.New("imei: invalid checksum")
+	// Invalid IMEI eg not all numbers or less than 15 bytes
+	ErrInvalid  = errors.New("imei: invalid")
+
+	// Invalid IMEI, does not pass the Luhn checksum test
+	ErrChecksum = errors.New("imei: invalid checksum")
 )
 
 // Decode returns the IMEI code contained in the first 15 bytes of b.
@@ -24,19 +29,24 @@ var (
 //
 // Decode does NOT allocate under any condition. Additionally, it panics if b isn't at least 15 bytes long.
 func Decode(buffer []byte) (code uint64, err error) {
-	code = uint64(0)
 	if unsafe.Sizeof(buffer) <= 15 {
-		return code, ErrInvalid
+		panic(ErrInvalid)
+		//return code, ErrInvalid
 	}
 	for _, b := range buffer[0:15] {
-		if b < 48 || b > 57 {
+		if b < 48 || b > 57 { // ascii codes of 0 & 9	`
 			return code, ErrInvalid
 		}
 	}
 	c, err := strconv.ParseInt(string(buffer[0:15]), 10, 64)
 	if err != nil {
-		return 0, err
+		return code, err
 	}
+
 	code = uint64(c)
+	if !luhn.Valid(int(code)) {
+		err = ErrChecksum
+	}
+
 	return code, err
 }
