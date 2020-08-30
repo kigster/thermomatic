@@ -38,3 +38,14 @@ jobs:
         go test -v \
           ./internal/common/imei \
           ./internal/common/luhn
+        
+    - name: Go Specs
+      run: |
+        export GOPATH=$(dirname $(which go))
+        export PATH=$GOPATH/bin:$PATH
+        echo "GOPATH=$GOPATH"
+        echo "PATH=$PATH"
+        go get github.com/onsi/ginkgo/ginkgo
+        go get github.com/onsi/gomega/...
+        ginkgo ./internal/common/*
+
