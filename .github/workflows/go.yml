@@ -35,10 +35,17 @@ jobs:
 
     - name: Test
       run: |
-        go test -v \
+        go test -v -race -coverprofile=coverage.txt -covermode=atomic \
           ./internal/common/imei \
-          ./internal/common/luhn
-        
+          ./internal/common/luhn \
+          ./internal/client \
+          ./internal/server
+
+    - name: Submit Test Coverage
+      run: |
+        CODECOV_TOKEN="8ebf3f30-55d8-4a9d-8c99-c5f3eef2a713" 
+        bash <(curl -s https://codecov.io/bash)
+
     - name: Go Specs
       run: |
         export GOPATH=$(dirname $(which go))

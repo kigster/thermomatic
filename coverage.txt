@@ -1,0 +1,21 @@
+mode: atomic
+github.com/kigster/thermomatic/internal/common/imei/imei.go:31.53,32.33 1 5
+github.com/kigster/thermomatic/internal/common/imei/imei.go:36.2,36.33 1 5
+github.com/kigster/thermomatic/internal/common/imei/imei.go:41.2,42.16 2 3
+github.com/kigster/thermomatic/internal/common/imei/imei.go:46.2,47.28 2 3
+github.com/kigster/thermomatic/internal/common/imei/imei.go:51.2,51.18 1 3
+github.com/kigster/thermomatic/internal/common/imei/imei.go:32.33,33.20 1 0
+github.com/kigster/thermomatic/internal/common/imei/imei.go:36.33,37.23 1 63
+github.com/kigster/thermomatic/internal/common/imei/imei.go:37.23,39.4 1 2
+github.com/kigster/thermomatic/internal/common/imei/imei.go:42.16,44.3 1 0
+github.com/kigster/thermomatic/internal/common/imei/imei.go:47.28,49.3 1 1
+github.com/kigster/thermomatic/internal/common/luhn/luhn.go:5.29,8.22 2 38
+github.com/kigster/thermomatic/internal/common/luhn/luhn.go:11.2,11.25 1 38
+github.com/kigster/thermomatic/internal/common/luhn/luhn.go:8.22,10.3 1 0
+github.com/kigster/thermomatic/internal/common/luhn/luhn.go:15.29,17.2 1 38
+github.com/kigster/thermomatic/internal/common/luhn/luhn.go:19.31,22.30 2 76
+github.com/kigster/thermomatic/internal/common/luhn/luhn.go:35.2,35.18 1 76
+github.com/kigster/thermomatic/internal/common/luhn/luhn.go:22.30,25.15 2 1140
+github.com/kigster/thermomatic/internal/common/luhn/luhn.go:32.3,33.15 2 1140
+github.com/kigster/thermomatic/internal/common/luhn/luhn.go:25.15,27.15 2 608
+github.com/kigster/thermomatic/internal/common/luhn/luhn.go:27.15,29.5 1 456

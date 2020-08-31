@@ -1,4 +1,5 @@
-# Bazel
+# Bazel/
+README.pdf
 
 # Ignore output directory symlinks
 bazel-*

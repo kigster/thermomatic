@@ -7,7 +7,7 @@
 image:https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkigster%2Fthermomatic.svg?type=shield[FOSSA,link=https://app.fossa.com/projects/git%2Bgithub.com%2Fkigster%2Fthermomatic?ref=badge_shield]
 image:https://github.com/kigster/thermomatic/workflows/Bazel%20Test/badge.svg?type=svg[Bazel Test]
 image:https://github.com/kigster/thermomatic/workflows/Go/badge.svg[Go CI]
-
+image:https://codecov.io/gh/kigster/thermomatic/branch/master/graph/badge.svg[Coverage,link=https://codecov.io/gh/kigster/thermomatic]
 
 == Solution Discussion
 
